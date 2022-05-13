@@ -12,7 +12,7 @@ on:
 # 2. Change these variables for your configuration:
 env:
   AZURE_FUNCTIONAPP_NAME: grillenFunction    # set this to your application's name
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: './FilesToCosmosDb'      # set this to the path to your web app project, defaults to the repository root
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
 
 jobs:
   build-and-deploy:
