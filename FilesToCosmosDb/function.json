@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "name": "InputBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "source/{name}",
+      "connection": "grillenstorage7_STORAGE"
+    },
+    {
+      "name": "outputDocument",
+      "type": "cosmosDB",
+      "direction": "out",
+      "databaseName": "grillenDb",
+      "collectionName": "docs",
+      "createIfNotExists": "true",
+      "connectionStringSetting": "CosmosDbConnectionString"
+    }
+  ]
+}
