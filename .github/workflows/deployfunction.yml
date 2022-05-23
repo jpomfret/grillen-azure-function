@@ -26,11 +26,10 @@ jobs:
     - name: 'Checkout GitHub Action'
       uses: actions/checkout@v3
 
-    - name: StringLowercase
+    - id: string
       uses: ASzc/change-string-case-action@v2
       with:
         string: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-
 
     - name: Azure Login
       uses: Azure/login@v1
@@ -45,7 +44,7 @@ jobs:
       with:
         # Specify the script here
         inlineScript: |
-          az storage account create --name ${{ steps.StringLowercase.outputs.lowercase }} --resource-group ${{ env.AZURE_FUNCTIONAPP_NAME }} --sku Standard_LRS
+          az storage account create --name ${{ steps.string.outputs.lowercase }} --resource-group ${{ env.AZURE_FUNCTIONAPP_NAME }} --sku Standard_LRS
           az functionapp create --name ${{ env.AZURE_FUNCTIONAPP_NAME }} --resource-group ${{ env.AZURE_FUNCTIONAPP_NAME }} --storage-account ${{ env.AZURE_FUNCTIONAPP_NAME }} --consumption-plan-location northeurope
 
     - name: 'Run Azure Functions Action'
