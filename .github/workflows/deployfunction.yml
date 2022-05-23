@@ -14,6 +14,10 @@ env:
   AZURE_FUNCTIONAPP_NAME: grillenFunctionTest    # set this to your application's name
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
 
+permissions:
+      id-token: write
+      contents: read
+
 jobs:
   build-and-deploy:
     runs-on: windows-latest
