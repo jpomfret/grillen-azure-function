@@ -8,4 +8,5 @@ Push-OutputBinding -Name outputDocument -Value @{
     date     = Get-Date
     fileName = $TriggerMetadata.Name
     fileSize = $($InputBlob.Length)
+    fileContents = [System.Text.Encoding]::ASCII.GetString($InputBlob)
 } 
