@@ -42,7 +42,7 @@ jobs:
           az functionapp config appsettings set --name ${{ env.AZURE_FUNCTIONAPP_NAME }} --resource-group ${{ env.AZURE_FUNCTIONAPP_NAME }} --settings "grillenstorage7_STORAGE= ${{ secrets.AZURE_STORAGE_CONN }}"
           az functionapp config appsettings set --name ${{ env.AZURE_FUNCTIONAPP_NAME }} --resource-group ${{ env.AZURE_FUNCTIONAPP_NAME }} --settings "CosmosDbConnectionString= ${{ secrets.AZURE_COSMOSDB_CONN }}"
 
-   - name: 'Run Azure Functions Action'
+    - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
       id: fa
       with:
